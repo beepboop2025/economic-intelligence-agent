@@ -1,259 +1,294 @@
-# 🌍 Global Economic Intelligence Agent
+# Global Economic Intelligence Agent v2.0
 
-An AI-powered market intelligence system that monitors and analyzes global economic events across all major asset classes: **equities, bonds, cryptocurrencies, forex, commodities, and debt markets**.
-
-## ✨ Features
-
-- **📊 Multi-Asset Coverage**: Tracks equities, bonds, crypto, forex, commodities, and debt
-- **🔍 Real-time Data**: Aggregates data from multiple financial data sources
-- **🧠 AI-Powered Analysis**: Uses LLMs (Claude, GPT, etc.) for sophisticated market analysis
-- **📈 Cross-Asset Insights**: Identifies correlations, divergences, and rotation patterns
-- **⚠️ Risk Assessment**: Detects systemic and tail risks across markets
-- **📄 Professional Reports**: Generates comprehensive markdown reports
-- **🔄 Continuous Monitoring**: Can run in scheduled monitoring mode
-
-## 🏗️ Architecture
+An enterprise-grade, AI-powered market intelligence platform that collects data from 9 sources, runs quantitative/risk/sentiment analysis, generates alerts, and produces professional reports across all major asset classes.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    ECONOMIC INTELLIGENCE AGENT              │
-├─────────────────────────────────────────────────────────────┤
-│  Data Collection          Analysis Engine      Report Gen   │
-│  ├─ Crypto (CoinGecko)    ├─ LLM Analysis     ├─ Markdown  │
-│  ├─ Forex (ExchangeRate)  ├─ Sentiment        ├─ JSON      │
-│  ├─ News (NewsAPI)        ├─ Risk Assessment  └─ Console   │
-│  ├─ Equities              └─ Cross-Asset                    │
-│  └─ Economic Calendar                                       │
-└─────────────────────────────────────────────────────────────┘
+Collect (9 sources) → Store (SQLite) → Analyze (Quant + Risk + Sentiment + LLM) → Alert → Report (MD/HTML/JSON)
 ```
 
-## 🚀 Quick Start
+## What It Does
 
-### 1. Installation
+- Pulls live data from **9 sources** — crypto, equities, bonds, forex, commodities, economic indicators, news, Reddit, and GDELT
+- Stores everything in **SQLite** with WAL mode for concurrent read/write
+- Runs **quantitative analysis** — RSI, MACD, Bollinger Bands, yield curve, regime detection
+- Computes **risk metrics** — VaR, drawdown, Sharpe/Sortino, stress tests (GFC 2008, COVID, rate shock)
+- Analyzes **sentiment** — VADER NLP on news, source-weighted scores, Reddit crowd sentiment, Fear/Greed index
+- Sends data to an **LLM** (Claude, GPT, Ollama) for macro analysis and trade ideas
+- Evaluates **7 alert types** — price thresholds, technical signals, volatility spikes, correlation breakdowns, economic calendar, anomalies, sentiment shifts
+- Generates reports in **Markdown, HTML, or JSON** with ASCII sparklines and historical comparison
+
+## Quick Start
 
 ```bash
+# Clone and install
+git clone https://github.com/beepboop2025/economic-intelligence-agent.git
 cd economic-intelligence-agent
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
+
+# Run with demo data (no API keys needed)
+cd src
+python main.py --demo
 ```
 
-### 2. API Key Setup
+That's it. The demo runs the full 9-step pipeline with realistic mock data and produces a report in `reports/`.
 
-You need at least one LLM provider API key:
+## Demo Output
 
-#### Option A: OpenRouter (Recommended - Free tier available)
+```
+ GLOBAL ECONOMIC INTELLIGENCE AGENT v2.0
+
+[1/9] Collecting market data...
+  Crypto: 10 | Equities: 7 | Bonds: 9 | News: 8
+[2/9] Persisting to database...
+  Stored 31 price records
+[3/9] Running quantitative analysis...
+  Yield curve 2Y-10Y spread: -0.2% (INVERTED)
+[4/9] Analyzing sentiment...
+  Fear/Greed Index: 59/100 (neutral)
+[5/9] Computing risk metrics...
+  Overall risk level: HIGH
+[6/9] LLM macro analysis...
+  Market Tone: MIXED
+[7/9] Evaluating alert rules...
+  🟠 [HIGH] DOGE surged 12.5% in 24h
+  🟡 [MEDIUM] BTC: bullish technical signal
+  🟡 [MEDIUM] Upcoming high-impact event: US Non-Farm Payrolls
+  9 new alerts triggered
+[8/9] Generating markdown report...
+  Report saved: reports/economic_report_20260302_0123.md
+[9/9] Archiving analysis...
+  Analysis archived to database
+
+ ANALYSIS COMPLETE
+```
+
+## API Keys
+
+**No keys required** for demo mode or these free data sources: CoinGecko, ExchangeRate, yfinance, Reddit, GDELT.
+
+For live LLM analysis, set one of these:
+
 ```bash
-export OPENROUTER_KEY="your_openrouter_key"
-```
-Get free key: https://openrouter.ai/
+# Option 1: OpenRouter (recommended — free tier, access to multiple models)
+export OPENROUTER_KEY="your_key"    # https://openrouter.ai/
 
-#### Option B: OpenAI
-```bash
-export OPENAI_API_KEY="your_openai_key"
-```
+# Option 2: OpenAI
+export OPENAI_API_KEY="your_key"    # https://platform.openai.com/
 
-#### Option C: Anthropic
-```bash
-export ANTHROPIC_API_KEY="your_anthropic_key"
+# Option 3: Anthropic
+export ANTHROPIC_API_KEY="your_key" # https://console.anthropic.com/
 ```
 
-#### Optional: NewsAPI (for more news sources)
-```bash
-export NEWSAPI_KEY="your_newsapi_key"
-```
-Get free key: https://newsapi.org/
-
-### 3. Run Your First Analysis
+Optional data source keys (all have free tiers):
 
 ```bash
-python src/main.py
+export FRED_API_KEY="your_key"      # https://fred.stlouisfed.org/docs/api/api_key.html
+export FINNHUB_KEY="your_key"       # https://finnhub.io/register
+export NEWSAPI_KEY="your_key"       # https://newsapi.org/register
+export ALPHA_VANTAGE_KEY="your_key" # https://www.alphavantage.co/support/#api-key
 ```
 
-## 📖 Usage
+Or copy `.env.example` to `.env` and fill in your keys.
 
-### Single Analysis Run
+## CLI Usage
+
 ```bash
-python src/main.py
+cd src
+
+# Full analysis with live data
+python main.py
+
+# Demo mode (no API keys)
+python main.py --demo
+
+# HTML report
+python main.py --demo --format html
+
+# JSON report (machine-readable)
+python main.py --demo --format json
+
+# Show alerts
+python main.py --demo --alerts
+
+# Quant analysis only (skip LLM/sentiment/risk)
+python main.py --demo --quant
+
+# Risk analysis only
+python main.py --demo --risk
+
+# Skip LLM, use mock analysis
+python main.py --no-llm
+
+# Compare with previous run
+python main.py --demo --compare
+
+# Continuous monitoring every 6 hours
+python main.py --monitor --interval 6
+
+# Check API key status
+python main.py --api-keys
+
+# Save raw collected data
+python main.py --save-data
 ```
 
-### Continuous Monitoring (updates every 6 hours)
-```bash
-python src/main.py --monitor --interval 6
+## Architecture
+
+```
+src/
+├── main.py                 # CLI orchestrator — 9-step pipeline
+├── config_loader.py        # YAML + .env config with validation
+├── data_collectors.py      # 9 data collectors
+│   ├── CryptoCollector          CoinGecko (free)
+│   ├── EquityCollector          yfinance — 10 indices + 11 sector ETFs
+│   ├── ForexCollector           ExchangeRate API (free)
+│   ├── FREDCollector            GDP, CPI, unemployment, fed funds, M2, yields
+│   ├── TreasuryYieldCollector   Full yield curve (3M→30Y, 10 maturities)
+│   ├── CommodityCollector       Gold, WTI, Brent, Nat Gas, Copper via FRED
+│   ├── FinnhubCollector         Market news + economic calendar
+│   ├── RedditSentimentCollector Hot posts from WSB, crypto, stocks, investing
+│   ├── GDELTCollector           Global news articles + tone timeline
+│   ├── AlphaVantageCollector    Stock quotes, top gainers/losers
+│   ├── EconomicCalendarCollector Finnhub + manual high-impact events
+│   └── NewsCollector            NewsAPI with keyword categorization
+├── analysis_engine.py      # LLM client (OpenRouter/OpenAI/Anthropic/Ollama)
+├── quant_engine.py         # Technical analysis + yield curve + regime detection
+│   ├── TechnicalAnalysis        RSI, MACD, Bollinger, SMA, EMA, ATR
+│   ├── CorrelationAnalyzer      Pairwise correlations, divergence detection
+│   ├── MarketRegimeDetector     Bull/bear/sideways/transition
+│   └── YieldCurveAnalyzer       Spread, inversion, steepness, term premium
+├── risk_engine.py          # Risk analytics
+│   ├── ValueAtRisk              Parametric, historical, conditional VaR
+│   ├── DrawdownAnalyzer         Max drawdown, current drawdown, series
+│   ├── PerformanceMetrics       Sharpe, Sortino, Calmar, Information ratio
+│   └── StressTest               GFC 2008, COVID 2020, rate shock, oil shock
+├── sentiment_engine.py     # NLP sentiment
+│   ├── VADERAnalyzer            VADER + financial term boosting
+│   ├── SourceWeighter           Reuters/Bloomberg > CNBC > Reddit
+│   ├── CrowdSentiment           Reddit engagement-weighted sentiment
+│   └── FearGreedIndex           5-component composite (0–100)
+├── alert_engine.py         # Alerting system
+│   ├── AlertRuleEngine          7 alert types
+│   └── AlertNotifier            Console, file log, webhook, email
+├── report_generator.py     # Multi-format reports
+│   └── EnhancedReportGenerator  MD/HTML/JSON, sparklines, heatmaps
+├── storage.py              # SQLite persistence (WAL mode)
+│   └── DataStore                6 tables, schema versioning, retention cleanup
+├── resilience.py           # Infrastructure
+│   ├── TTLCache                 LRU + per-key TTL
+│   ├── RateLimiter              Token bucket (tuned per API)
+│   ├── CircuitBreaker           3-state with single probe in half-open
+│   └── ResilientFetcher         Facade: cache → rate limit → circuit breaker → retry
+├── utils.py                # Formatting, JSON extraction, logging
+├── demo.py                 # Demo runner (no API keys)
+└── demo_data.py            # Mock data generators for all asset classes
 ```
 
-### Save Raw Data
-```bash
-python src/main.py --save-data
-```
+## Data Sources
 
-### Check API Key Status
-```bash
-python src/main.py --api-keys
-```
+| Source | Data | API Key | Free Tier |
+|--------|------|---------|-----------|
+| CoinGecko | 50 cryptos, global metrics, trending | No | Unlimited |
+| yfinance | 10 global indices, 11 sector ETFs | No | Unlimited |
+| ExchangeRate API | Forex rates (USD, EUR bases) | No | Unlimited |
+| FRED | GDP, CPI, unemployment, fed funds, M2, PCE, yields | Yes | 120 req/min |
+| Finnhub | Market news, economic calendar | Yes | 60 req/min |
+| Reddit | Hot posts from WSB, crypto, stocks, investing | No | Public JSON |
+| GDELT | Global news articles, tone analysis | No | Unlimited |
+| Alpha Vantage | Stock quotes, top movers | Yes | 25 req/day |
+| NewsAPI | Financial news with categorization | Yes | 100 req/day |
 
-### Custom Config
-```bash
-python src/main.py --config my_config.yaml
-```
+## Report Sections
 
-## ⚙️ Configuration
+Each report includes:
 
-Edit `config/settings.yaml` to customize:
+1. **Executive Summary** — Market tone, key theme, risks, opportunities
+2. **Market Overview** — Equities, bonds, crypto, forex conditions
+3. **Quantitative Metrics** — Yield curve (with sparkline), technical signals, market regime
+4. **Risk Metrics** — VaR, stress test table, overall risk level
+5. **Sentiment Analysis** — Fear/Greed gauge, news sentiment, Reddit crowd sentiment
+6. **Key Events & Catalysts** — Upcoming market movers with impact assessment
+7. **Cross-Asset Analysis** — Correlations, divergences, historical context
+8. **Risk Assessment** — Systemic risks, tail risks, hedging considerations
+9. **Active Alerts** — Color-coded by severity
+10. **Outlook** — Immediate, short-term, medium-term forecasts with key levels
+11. **Trade Setups** — Actionable ideas with rationale and risk/reward
+12. **Raw Data Snapshot** — Price tables for crypto and indices
+13. **Historical Comparison** — Diff vs previous analysis (with `--compare`)
+
+## SQLite Database
+
+The agent persists all data to `data/economic_intelligence.db`:
+
+| Table | Contents |
+|-------|----------|
+| `assets` | Symbol registry (UNIQUE on symbol + asset_class) |
+| `price_history` | Price, volume, change, market cap (indexed by asset + timestamp) |
+| `economic_indicators` | FRED series values over time |
+| `news` | Articles with sentiment scores and categories |
+| `alerts` | Triggered alerts with dedup key (UNIQUE) |
+| `analysis_history` | Past analyses with market tone, theme, full summary JSON |
+
+Automatic cleanup removes data older than 90 days (configurable via `storage.retention_days`).
+
+## Configuration
+
+Edit `config/settings.yaml` to enable/disable sources, change thresholds, or switch LLM providers:
 
 ```yaml
-# LLM Provider
-llm:
-  provider: "openrouter"  # Options: openrouter, openai, anthropic, ollama
-  model: "anthropic/claude-3.5-sonnet"
-  temperature: 0.3
-
-# Markets to analyze
-analysis:
-  markets:
-    - equities
-    - bonds
-    - crypto
-    - forex
-    - commodities
-    - debt
-
-# Data sources
 data_sources:
   coingecko:
-    enabled: true  # Free, no API key needed
-  newsapi:
-    enabled: true  # Requires API key
+    enabled: true
+  fred:
+    enabled: true
+  reddit:
+    enabled: true
+
+llm:
+  provider: "openrouter"           # openrouter, openai, anthropic, ollama
+  model: "anthropic/claude-3.5-sonnet"
+
+alerts:
+  channels: ["console"]            # console, file, webhook, email
+  thresholds:
+    price_change_pct: 5.0          # alert on >5% daily moves
+    volatility_spike: 3.0          # z-score threshold
+    rsi_overbought: 70
+    rsi_oversold: 30
+
+storage:
+  db_path: "data/economic_intelligence.db"
+  retention_days: 90
 ```
 
-## 📊 Sample Output
+## Local Models (Ollama)
 
-```
-╔═══════════════════════════════════════════════════════════╗
-║              🌍 ECONOMIC INTELLIGENCE AGENT               ║
-╚═══════════════════════════════════════════════════════════╝
+For privacy or offline use:
 
-📡 Phase 1: Collecting Market Data...
-   ✅ Cryptocurrencies: 50 coins
-   ✅ Forex pairs: Multiple USD/EUR rates
-   ✅ News articles: 25 items
+```bash
+# Install Ollama: https://ollama.ai/
+ollama pull llama2:13b
 
-🧠 Phase 2: AI Analysis...
-   ✅ Market Tone: MIXED
-   ✅ Key Theme: Central bank divergence driving volatility...
-   ✅ Risks identified: 4
-   ✅ Trade setups: 3
+# Edit config/settings.yaml:
+# llm:
+#   provider: "ollama"
+#   model: "llama2:13b"
 
-📄 Phase 3: Generating Report...
-   ✅ Report saved: reports/economic_report_20240301_1430.md
-
-📊 EXECUTIVE SUMMARY:
-Market Tone: MIXED
-
-Key Theme:
-  Fed's hawkish stance contrasts with ECB dovish signals...
-
-⚠️  Key Risks:
-  • Commercial real estate refinancing cliff
-  • Treasury market liquidity concerns
+python src/main.py
 ```
 
-## 📁 Project Structure
+## Requirements
 
-```
-economic-intelligence-agent/
-├── config/
-│   └── settings.yaml          # Configuration
-├── src/
-│   ├── __init__.py
-│   ├── main.py                # CLI and orchestrator
-│   ├── data_collectors.py     # Market data collection
-│   └── analysis_engine.py     # LLM analysis & reports
-├── data/                      # Raw data storage
-├── reports/                   # Generated reports
-├── requirements.txt
-└── README.md
-```
+- Python 3.9+
+- Core: `aiohttp`, `requests`, `pyyaml`, `python-dateutil`
+- Data: `yfinance`
+- Analysis: `numpy`, `vaderSentiment`
+- UI: `rich`
 
-## 🔌 Data Sources
+## Disclaimer
 
-| Source | Data Type | Cost | API Key |
-|--------|-----------|------|---------|
-| CoinGecko | Crypto prices | Free | No |
-| ExchangeRate-API | Forex rates | Free tier | Optional |
-| NewsAPI | Financial news | Free tier | Yes |
-| Alpha Vantage | Stocks | Free tier | Yes |
-| OpenRouter | LLM access | Free tier | Yes |
+This tool is for **informational and educational purposes only**. It does not constitute financial advice. Always do your own research and consult with financial advisors before making investment decisions.
 
-## 🧪 Using Local Models (Ollama)
+## License
 
-For privacy or offline use, run with local models:
-
-1. Install Ollama: https://ollama.ai/
-2. Pull a model: `ollama pull llama2:13b`
-3. Edit config:
-   ```yaml
-   llm:
-     provider: "ollama"
-     model: "llama2:13b"
-   ```
-
-## 📝 Report Sections
-
-Each generated report includes:
-
-1. **Executive Summary** - Market tone and key theme
-2. **Market Overview** - By asset class (equities, bonds, crypto, forex)
-3. **Key Events** - Major catalysts and market movers
-4. **Cross-Asset Analysis** - Correlations and divergences
-5. **Risk Assessment** - Systemic and tail risks
-6. **Sector Rotation** - Money flows and leadership
-7. **Outlook** - Forecasts for multiple timeframes
-8. **Trade Setups** - Actionable ideas with rationale
-
-## 🛠️ Extending the Agent
-
-### Adding a New Data Source
-
-```python
-# In src/data_collectors.py
-class MyDataCollector(BaseCollector):
-    async def get_data(self):
-        # Your implementation
-        pass
-```
-
-### Custom Analysis Prompts
-
-Edit the `SYSTEM_PROMPT` in `src/analysis_engine.py` to customize the AI's analysis style.
-
-## ⚠️ Disclaimer
-
-This tool is for **informational and educational purposes only**. It does not constitute financial advice. Always:
-
-- Do your own research
-- Consult with financial advisors
-- Never trade based solely on AI-generated analysis
-- Be aware of AI limitations and hallucinations
-
-## 📜 License
-
-MIT License - Free to use and modify.
-
-## 🤝 Contributing
-
-Contributions welcome! Areas for improvement:
-
-- Additional data sources
-- More sophisticated technical analysis
-- Interactive visualizations
-- Backtesting capabilities
-- Alert system for significant events
-
----
-
-Built with ❤️ for the global macro community.
+MIT License — free to use and modify.
