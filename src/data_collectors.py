@@ -121,7 +121,7 @@ class CryptoCollector(BaseCollector):
             "order": "market_cap_desc",
             "per_page": limit,
             "page": 1,
-            "sparkline": False,
+            "sparkline": "false",
             "price_change_percentage": "24h"
         }
         data = await self.fetch(url, params)

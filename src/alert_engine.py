@@ -148,7 +148,7 @@ class AlertRuleEngine:
             threshold = self.thresholds.get("volatility_spike", 3.0)
 
             for c in crypto:
-                ch = abs(c.change_percent_24h if hasattr(c, "change_percent_24h") else c.get("change_percent_24h", 0) or 0)
+                ch = abs((c.change_percent_24h if hasattr(c, "change_percent_24h") else c.get("change_percent_24h", 0)) or 0)
                 sym = c.symbol if hasattr(c, "symbol") else c.get("symbol", "?")
                 z = (ch - mean) / std if std > 0 else 0
                 if z > threshold:

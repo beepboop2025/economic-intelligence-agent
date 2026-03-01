@@ -302,6 +302,7 @@ class EconomicIntelligenceAgent:
 
         # ── Step 7: ALERTS ───────────────────────────────────────
         _print("[7/9] Evaluating alert rules...")
+        new_alerts = []
         try:
             new_alerts = self.alerts.evaluate_and_notify(
                 data, quant_summary, sent_summary, risk_summary
