@@ -1,0 +1,171 @@
+# Global Economic Intelligence Agent v2.0 Configuration
+
+# ============================================================
+# Data Sources Configuration
+# ============================================================
+data_sources:
+  # Cryptocurrency — CoinGecko (FREE, no key needed)
+  coingecko:
+    enabled: true
+    base_url: "https://api.coingecko.com/api/v3"
+
+  # Equities & Indices — yfinance (FREE, no key needed)
+  yfinance:
+    enabled: true
+
+  # Forex — ExchangeRate-API (FREE v4, no key needed)
+  exchangerate:
+    enabled: true
+    base_url: "https://api.exchangerate-api.com/v4"
+
+  # FRED — Federal Reserve Economic Data (FREE, key recommended)
+  # Get key: https://fred.stlouisfed.org/docs/api/api_key.html
+  fred:
+    enabled: true
+    base_url: "https://api.stlouisfed.org/fred"
+
+  # Finnhub — Market news + economic calendar (FREE tier: 60/min)
+  # Get key: https://finnhub.io/register
+  finnhub:
+    enabled: true
+    base_url: "https://finnhub.io/api/v1"
+
+  # Alpha Vantage — Stock quotes (FREE tier: 25/day)
+  # Get key: https://www.alphavantage.co/support/#api-key
+  alpha_vantage:
+    enabled: false
+    base_url: "https://www.alphavantage.co"
+    api_key: "${ALPHA_VANTAGE_KEY}"
+
+  # NewsAPI (FREE tier: 100/day)
+  newsapi:
+    enabled: false
+    base_url: "https://newsapi.org/v2"
+    api_key: "${NEWSAPI_KEY}"
+
+  # GDELT — Global news + tone analysis (FREE, no key)
+  gdelt:
+    enabled: true
+    base_url: "https://api.gdeltproject.org/api/v2"
+
+  # Reddit — Crowd sentiment (FREE, no key)
+  reddit:
+    enabled: true
+
+  # Economic Calendar (via Finnhub + manual events)
+  economic_calendar:
+    enabled: true
+
+# ============================================================
+# LLM Configuration
+# ============================================================
+llm:
+  provider: "openrouter"
+  model: "anthropic/claude-3.5-sonnet"
+  api_key: "${OPENROUTER_KEY}"
+  temperature: 0.3
+  max_tokens: 4000
+
+  # Alternative configurations (uncomment and set in .env):
+  # provider: "openai"
+  # model: "gpt-4"
+  # api_key: "${OPENAI_API_KEY}"
+  #
+  # provider: "anthropic"
+  # model: "claude-3-sonnet-20240229"
+  # api_key: "${ANTHROPIC_API_KEY}"
+  #
+  # provider: "ollama"
+  # model: "llama2:13b"
+
+# ============================================================
+# Analysis Settings
+# ============================================================
+analysis:
+  markets:
+    - equities
+    - bonds
+    - crypto
+    - forex
+    - commodities
+  regions:
+    - global
+    - us
+    - europe
+    - asia
+    - emerging_markets
+  timeframes:
+    - immediate
+    - short_term
+    - medium_term
+  update_frequency: 6
+
+# ============================================================
+# Report Configuration
+# ============================================================
+report:
+  format: markdown  # markdown, html, json
+  sections:
+    - executive_summary
+    - market_overview
+    - quantitative_metrics
+    - risk_metrics
+    - sentiment_analysis
+    - key_events
+    - cross_asset_analysis
+    - risk_assessment
+    - alerts
+    - outlook
+    - trade_setups
+  auto_save: true
+  output_dir: "reports"
+
+# ============================================================
+# Storage (SQLite)
+# ============================================================
+storage:
+  db_path: "data/economic_intelligence.db"
+  retention_days: 90
+
+# ============================================================
+# Resilience
+# ============================================================
+resilience:
+  cache_ttl: 300
+  max_retries: 3
+  circuit_breaker_threshold: 5
+  circuit_breaker_recovery: 60
+
+# ============================================================
+# Alerts
+# ============================================================
+alerts:
+  enabled: true
+  channels:
+    - console
+    # - file
+    # - webhook
+    # - email
+  thresholds:
+    price_change_pct: 5.0
+    volatility_spike: 3.0
+    rsi_overbought: 70
+    rsi_oversold: 30
+    sentiment_shift: 0.4
+    correlation_breakdown: 0.3
+  notifications:
+    alert_log: "data/alerts.log"
+    # webhook_url: "https://hooks.slack.com/services/xxx"
+    # smtp_host: ""
+    # smtp_port: 587
+    # smtp_user: ""
+    # smtp_pass: ""
+    # email_to: ""
+
+# ============================================================
+# Logging
+# ============================================================
+logging:
+  level: INFO
+  file: "logs/agent.log"
+  console: true
