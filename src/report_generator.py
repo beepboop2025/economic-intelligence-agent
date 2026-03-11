@@ -431,13 +431,19 @@ class EnhancedReportGenerator:
         for line in lines:
             stripped = line.strip()
 
-            # Headings
+            # Headings — apply bold/code substitutions to heading content
             if stripped.startswith("# "):
-                html_lines.append(f"<h1>{stripped[2:]}</h1>")
+                content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', stripped[2:])
+                content = re.sub(r'`(.+?)`', r'<code>\1</code>', content)
+                html_lines.append(f"<h1>{content}</h1>")
             elif stripped.startswith("## "):
-                html_lines.append(f"<h2>{stripped[3:]}</h2>")
+                content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', stripped[3:])
+                content = re.sub(r'`(.+?)`', r'<code>\1</code>', content)
+                html_lines.append(f"<h2>{content}</h2>")
             elif stripped.startswith("### "):
-                html_lines.append(f"<h3>{stripped[4:]}</h3>")
+                content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', stripped[4:])
+                content = re.sub(r'`(.+?)`', r'<code>\1</code>', content)
+                html_lines.append(f"<h3>{content}</h3>")
             elif stripped.startswith("---"):
                 html_lines.append("<hr>")
             # Table

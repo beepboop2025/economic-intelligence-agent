@@ -84,6 +84,8 @@ def format_percent(value: Optional[float], decimals: int = 2) -> str:
     """Format percentage with sign"""
     if value is None:
         return "N/A"
+    if isinstance(value, str) and not value.replace('.', '', 1).replace('-', '', 1).isdigit():
+        return "N/A"
     value = Number(value) if not isinstance(value, (int, float)) else value
     return f"{value:+.{decimals}f}%"
 

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-03-02T04:20:23.815146",
+  "crypto": {
+    "top_coins": [],
+    "global": {},
+    "trending": {}
+  },
+  "equities": {
+    "indices": [
+      "MarketData(asset_class='equities', symbol='GSPC', name='S&P 500', price=6878.8798828125, change_24h=-29.980117187499673, change_percent_24h=-0.4339372514061607, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 29, 193812), additional_data={})",
+      "MarketData(asset_class='equities', symbol='DJI', name='Dow Jones', price=48977.921875, change_24h=-521.2781249999971, change_percent_24h=-1.0531041410770217, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 29, 933728), additional_data={})",
+      "MarketData(asset_class='equities', symbol='IXIC', name='NASDAQ', price=22668.2109375, change_24h=-210.17206250000163, change_percent_24h=-0.9186491130076878, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 30, 682164), additional_data={})",
+      "MarketData(asset_class='equities', symbol='FTSE', name='FTSE 100', price=10910.599609375, change_24h=63.89960937499927, change_percent_24h=0.5891156699733492, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 31, 330756), additional_data={})",
+      "MarketData(asset_class='equities', symbol='GDAXI', name='DAX 40', price=25284.259765625, change_24h=-4.760234375000437, change_percent_24h=-0.018823324806577862, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 31, 982196), additional_data={})",
+      "MarketData(asset_class='equities', symbol='N225', name='Nikkei 225', price=58850.26953125, change_24h=128.078125, change_percent_24h=0.21810855816659494, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 32, 636800), additional_data={})",
+      "MarketData(asset_class='equities', symbol='HSI', name='Hang Seng', price=26630.5390625, change_24h=249.51953125, change_percent_24h=0.9458297506448838, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 33, 360933), additional_data={})",
+      "MarketData(asset_class='equities', symbol='000001.SS', name='Shanghai Composite', price=4162.880859375, change_24h=14.41943359375, change_percent_24h=0.3475850951424597, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 33, 987574), additional_data={})",
+      "MarketData(asset_class='equities', symbol='NSEI', name='NIFTY 50', price=25178.650390625, change_24h=-314.650390625, change_percent_24h=-1.2342473551185704, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 34, 703004), additional_data={})",
+      "MarketData(asset_class='equities', symbol='BVSP', name='Bovespa', price=188787.0, change_24h=-2199.2300000000105, change_percent_24h=-1.1515123367794686, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 35, 460359), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLE', name='Energy', price=55.91999816894531, change_24h=0.9099981689453145, change_percent_24h=1.6542413541998084, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 36, 307048), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLF', name='Financials', price=51.43000030517578, change_24h=-0.7999996948242156, change_percent_24h=-1.5316861857633843, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 37, 101788), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLK', name='Technology', price=138.75999450683594, change_24h=-1.1300054931640489, change_percent_24h=-0.8077814662692466, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 37, 906366), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLV', name='Healthcare', price=160.1999969482422, change_24h=2.809996948242201, change_percent_24h=1.7853719729602906, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 38, 732969), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLY', name='Consumer Discretionary', price=116.86000061035156, change_24h=0.6100006103515625, change_percent_24h=0.524731707829301, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 39, 686648), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLP', name='Consumer Staples', price=90.01000213623047, change_24h=1.330002136230462, change_percent_24h=1.4997768789247428, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 40, 520356), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLI', name='Industrials', price=177.13999938964844, change_24h=1.1799993896484295, change_percent_24h=0.6706066092568933, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 41, 323492), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLB', name='Materials', price=53.40999984741211, change_24h=0.5674998474121082, change_percent_24h=1.0739458720009618, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 42, 135173), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLU', name='Utilities', price=47.72999954223633, change_24h=0.5299995422363253, change_percent_24h=1.1228803860939096, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 42, 952687), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLRE', name='Real Estate', price=43.84000015258789, change_24h=0.2400001525878892, change_percent_24h=0.5504590655685532, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 43, 724136), additional_data={})",
+      "MarketData(asset_class='equities', symbol='XLC', name='Communication Services', price=118.05000305175781, change_24h=1.1500030517578068, change_percent_24h=0.9837494027012889, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 4, 20, 44, 477106), additional_data={})"
+    ],
+    "sectors": []
+  },
+  "forex": {
+    "usd_rates": {},
+    "eur_rates": {}
+  },
+  "bonds": {
+    "yields": []
+  },
+  "commodities": {
+    "prices": []
+  },
+  "economic_indicators": {},
+  "news": [],
+  "reddit": {
+    "wallstreetbets": [],
+    "CryptoCurrency": [],
+    "stocks": [],
+    "investing": []
+  },
+  "gdelt": [],
+  "economic_events": [
+    {
+      "event": "FOMC Rate Decision",
+      "impact": "high",
+      "source": "manual"
+    },
+    {
+      "event": "US CPI Release",
+      "impact": "high",
+      "source": "manual"
+    },
+    {
+      "event": "US Non-Farm Payrolls",
+      "impact": "high",
+      "source": "manual"
+    },
+    {
+      "event": "ECB Rate Decision",
+      "impact": "high",
+      "source": "manual"
+    },
+    {
+      "event": "US GDP (Advance)",
+      "impact": "high",
+      "source": "manual"
+    }
+  ]
+}

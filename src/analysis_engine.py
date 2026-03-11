@@ -345,15 +345,15 @@ Provide JSON response:
 }}"""
 
         response = self.llm.create_chat_completion(self.SYSTEM_PROMPT, prompt)
-        
+
         try:
-            json_start = response.find('{')
-            json_end = response.rfind('}') + 1
-            if json_start >= 0:
-                return json.loads(response[json_start:json_end])
-        except:
+            from utils import extract_json_from_text
+            result = extract_json_from_text(response)
+            if result is not None:
+                return result
+        except (json.JSONDecodeError, ValueError, TypeError):
             pass
-        
+
         return {"overall": "neutral", "raw": response}
 
 

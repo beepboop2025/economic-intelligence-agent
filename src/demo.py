@@ -146,7 +146,8 @@ def run_demo(report_format: str = "markdown"):
         report = reporter.generate_markdown(analysis, data, quant=quant_summary, risk=risk_summary, sentiment=sent_summary, alerts=new_alerts, previous=previous)
 
     ts = datetime.now().strftime("%Y%m%d_%H%M")
-    report_path = reporter.save_report(report, f"demo_report_{ts}", fmt=report_format)
+    ext = {"markdown": "md", "html": "html", "json": "json"}.get(report_format, "md")
+    report_path = reporter.save_report(report, f"demo_report_{ts}.{ext}", fmt=report_format)
     print(f"   Report saved: {report_path}")
 
     # Step 9: Archive

@@ -14,6 +14,11 @@ logger = logging.getLogger(__name__)
 
 SCHEMA_VERSION = 1
 
+VALID_TABLES = frozenset([
+    "assets", "price_history", "economic_indicators",
+    "news", "alerts", "analysis_history", "schema_version",
+])
+
 SCHEMA_SQL = """
 -- Assets master table
 CREATE TABLE IF NOT EXISTS assets (
@@ -165,7 +170,6 @@ class DataStore:
             (asset_id, ts, price, volume, change_percent, market_cap,
              json.dumps(additional_data) if additional_data else None),
         )
-        self.conn.commit()
 
     def get_price_history(
         self, symbol: str, asset_class: str, days: int = 30
@@ -324,6 +328,7 @@ class DataStore:
                     timestamp=md.get("timestamp", datetime.now().isoformat()),
                 )
                 count += 1
+        self.conn.commit()
         return count
 
     # ── Maintenance ──────────────────────────────────────────────
@@ -340,6 +345,8 @@ class DataStore:
             ("alerts", "triggered_at"),
             ("analysis_history", "timestamp"),
         ]:
+            if table not in VALID_TABLES:
+                raise ValueError(f"Invalid table name: {table}")
             cur = self.conn.execute(
                 f"DELETE FROM {table} WHERE {col} < ?", (cutoff,)
             )
@@ -353,6 +360,8 @@ class DataStore:
         """Get row counts for all tables"""
         stats = {}
         for table in ["assets", "price_history", "economic_indicators", "news", "alerts", "analysis_history"]:
+            if table not in VALID_TABLES:
+                raise ValueError(f"Invalid table name: {table}")
             cur = self.conn.execute(f"SELECT COUNT(*) FROM {table}")
             stats[table] = cur.fetchone()[0]
         return stats

@@ -1,0 +1,247 @@
+# Global Economic Intelligence Report
+
+**Generated:** 2026-03-02 04:26 UTC
+
+---
+
+## Executive Summary
+
+**Market Tone:** MIXED
+
+**Key Theme:** Central bank divergence and crypto institutional adoption driving cross-asset volatility, with inflation concerns moderating but growth worries emerging.
+
+### Primary Risk Factors
+- Commercial real estate refinancing cliff with $1.5T debt maturing 2024-2025
+- Persistent inflation forcing central banks to maintain restrictive policy longer
+- Geopolitical tensions in Middle East threatening energy supply stability
+- China property sector stress with potential global contagion
+
+### Primary Opportunities
+- Bitcoin ETF inflows creating structural demand floor
+- Gold benefiting from fiscal dominance and de-dollarization trends
+- Energy sector on supply constraints and infrastructure investment
+- AI productivity boom driving technology sector earnings
+
+---
+
+## Market Overview
+
+### Equities
+- **Trend:** Consolidation with rotation from mega-cap tech to value and small-caps
+- **Key Levels:** S&P 500 support at 5750/5650, resistance at 5900/6000
+- **Sentiment:** neutral
+
+### Bonds
+- **Yield Trend:** Range-bound with 10Y Treasury 4.1-4.4%, curve steepening beginning
+- **Curve Shape:** inverted
+- **Implications:** Historical recession indicator, but soft landing still possible
+
+### Crypto
+- **Market Phase:** accumulation
+- **Dominance Trends:** BTC dominance elevated at 58% on institutional flows
+- **Risk Appetite:** moderate
+
+### Forex
+- **Dollar Strength:** strong
+- **Major Moves:** USD/JPY near 150 intervention watch, EUR/USD testing 0.92 support
+- **Carry Trade Activity:** Reduced as BoJ normalizes, unwind risk elevated
+
+---
+
+## Quantitative Metrics
+
+### Technical Signals
+| Symbol | Price | Change | Signal |
+|--------|-------|--------|--------|
+| BTC | $65,291.00 | -2.9% | bearish |
+| ETH | $1,927.78 | -2.1% | bearish |
+| USDT | $1.00 | -0.0% | neutral |
+| BNB | $615.10 | -0.6% | neutral |
+| XRP | $1.35 | -3.0% | bearish |
+
+### Market Regime
+- **GSPC:** neutral (-0.43%)
+- **DJI:** bearish (-1.05%)
+- **IXIC:** bearish (-0.92%)
+
+---
+
+## Risk Metrics
+
+**Overall Risk Level:** HIGH
+
+### Value at Risk (95%)
+**crypto_portfolio:**
+- Parametric 95: 5.438%
+- Historical 95: 5.13%
+- Cvar 95: 6.672%
+
+### Stress Test Results
+| Scenario | P&L | P&L % |
+|----------|-----|-------|
+| 2008 Global Financial Crisis | $-30,250 | -30.2% |
+| COVID-19 March 2020 crash | $-23,350 | -23.4% |
+| Sudden +200bp rate increase | $-14,500 | -14.5% |
+| Oil price doubles (supply disruption) | $-6,150 | -6.2% |
+
+---
+
+## Sentiment Analysis
+
+### Fear & Greed Index: 50/100 (neutral)
+`[█████████░░░░░░░░░░░]`
+
+- Momentum: 52.3
+- News Sentiment: 50.0
+- Crowd Sentiment: 47.2
+
+### Crowd Sentiment (Reddit)
+- **Score:** -0.056 (bearish)
+- **Volume:** 60 posts, 110378 engagement
+
+---
+
+## Key Events & Catalysts
+
+### 1. Fed Chair Powell Congressional testimony
+- **Impact:** immediate
+- **Affected Assets:** USD, Treasuries, Gold, Bitcoin
+- **Implication:** Dovish tone bullish for risk assets
+
+### 2. US Non-Farm Payrolls release
+- **Impact:** immediate
+- **Affected Assets:** USD, Treasuries, Equities
+- **Implication:** Strong data delays rate cut expectations
+
+### 3. ECB Rate Decision with updated projections
+- **Impact:** delayed
+- **Affected Assets:** EUR, European equities
+- **Implication:** Easing signals bearish for EUR
+
+---
+
+## Cross-Asset Analysis
+
+### Bitcoin and Gold decoupling from traditional risk assets
+- **Assets:** Bitcoin, Gold, USD
+- **Historical Context:** Similar to 2020-2021 inflation hedge phase
+- **Implications:** Treat both as distinct inflation/uncertainty hedges
+
+### Equity-bond correlation normalizing to negative
+- **Assets:** S&P 500, 10Y Treasury
+- **Historical Context:** Positive correlation during 2022 was anomaly
+- **Implications:** Traditional 60/40 diversification working again
+
+---
+
+## Risk Assessment
+
+### CRE refinancing crisis as $1.5T debt matures into higher rates
+- **Severity:** high
+- **Probability:** medium
+- **Triggers:** Regional bank failures, Office vacancy >25%
+
+### Treasury market liquidity stress amid QT
+- **Severity:** medium
+- **Probability:** medium
+- **Triggers:** Auction tail risks, Foreign selling
+
+**Tail Risks:** Middle East conflict disrupting oil above $120/bbl; Major crypto exchange failure triggering DeFi contagion; AI bubble burst with concentrated tech valuations
+
+**Hedging:** Long volatility via VIX calls, increase gold to 10-15%, maintain USD cash buffer
+
+---
+
+## Active Alerts
+
+- 🟡 **[MEDIUM]** BCH dropped 5.2% in 24h
+- 🟡 **[MEDIUM]** SHIB dropped 5.0% in 24h
+- 🟡 **[MEDIUM]** TON dropped 6.5% in 24h
+- 🟡 **[MEDIUM]** DOT dropped 8.2% in 24h
+- 🟡 **[MEDIUM]** BTC: bearish technical signal
+- 🟡 **[MEDIUM]** ETH: bearish technical signal
+- 🟡 **[MEDIUM]** XRP: bearish technical signal
+- 🟠 **[HIGH]** DOT: volatility spike (z=3.3)
+
+---
+
+## Outlook & Forecasts
+
+### Immediate (1-7 Days)
+Range-bound. BTC consolidating $62291-$68291. Dollar strong but overbought.
+
+### Short-Term (1-4 Weeks)
+Directional catalyst from NFP and CPI data. Soft landing = risk-on rally.
+
+### Medium-Term (1-6 Months)
+Baseline: soft landing, Fed cuts 2-3 times mid-year. Bear case: credit event.
+
+### Key Levels to Watch
+- **Equities:** S&P 5650 support, 6000 breakout, VIX 20 fear threshold
+- **Bonds:** 10Y 3.8% bullish, 4.5% bearish, 2s10s flattening
+- **Crypto:** BTC $60291 support, $100k psychological
+- **Forex:** DXY 108 resistance, USD/JPY 150 intervention
+
+### Catalysts to Monitor
+- Fed policy pivot signals
+- Inflation trajectory (CPI/PCE)
+- Corporate earnings guidance
+- China stimulus effectiveness
+- Geopolitical escalations
+
+---
+
+## Trade Setups
+
+### Setup 1: Long BTC in $60291-$63291 accumulation zone
+- **Rationale:** ETF inflows + halving catalyst
+- **Risk/Reward:** 3:1
+- **Timeframe:** medium
+
+### Setup 2: Yield curve steepener: Long 2Y, Short 10Y
+- **Rationale:** Curve normalization as Fed cuts
+- **Risk/Reward:** 2.5:1
+- **Timeframe:** short
+
+### Setup 3: Gold long on dips to $2800-$2825
+- **Rationale:** Fiscal dominance hedge + central bank buying
+- **Risk/Reward:** 2:1
+- **Timeframe:** short
+
+---
+
+## Raw Market Data Snapshot
+
+### Top Cryptocurrencies
+| Symbol | Price | 24h Change | Market Cap |
+|--------|-------|------------|------------|
+| BTC | $65,291.00 | -2.93% | $1.3T |
+| ETH | $1,927.78 | -2.07% | $232.2B |
+| USDT | $1.00 | -0.04% | $183.6B |
+| BNB | $615.10 | -0.57% | $83.9B |
+| XRP | $1.35 | -2.99% | $82.4B |
+| USDC | $0.9999 | -0.01% | $75.2B |
+| SOL | $82.89 | -2.37% | $47.2B |
+| TRX | $0.2806 | -0.58% | $26.6B |
+| FIGR_HELOC | $1.03 | +0.00% | $15.9B |
+| DOGE | $0.0921 | -2.19% | $15.6B |
+
+### Major Indices
+| Index | Price | Change |
+|-------|-------|--------|
+| GSPC | $6,878.88 | -0.43% |
+| DJI | $48,977.92 | -1.05% |
+| IXIC | $22,668.21 | -0.92% |
+| FTSE | $10,910.60 | +0.59% |
+| GDAXI | $25,284.26 | -0.02% |
+| N225 | $58,850.27 | +0.22% |
+| HSI | $26,630.54 | +0.95% |
+| 000001.SS | $4,162.88 | +0.35% |
+| NSEI | $25,178.65 | -1.23% |
+| BVSP | $188,787.00 | -1.15% |
+
+---
+
+
+---
+*This report is generated by AI and should not be considered financial advice.*

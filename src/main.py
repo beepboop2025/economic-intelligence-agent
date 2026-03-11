@@ -242,6 +242,7 @@ class EconomicIntelligenceAgent:
 
         # ── Step 3: QUANT ────────────────────────────────────────
         _print("[3/9] Running quantitative analysis...")
+        quant_summary = {}
         try:
             quant_summary = self.quant.generate_quant_summary(data)
             result["quant"] = quant_summary
@@ -257,6 +258,8 @@ class EconomicIntelligenceAgent:
 
         # ── Step 4: SENTIMENT ────────────────────────────────────
         _print("[4/9] Analyzing sentiment...")
+        sent_summary = {}
+        fg = {}
         try:
             sent_summary = self.sentiment.generate_sentiment_summary(data)
             result["sentiment"] = sent_summary
@@ -267,6 +270,7 @@ class EconomicIntelligenceAgent:
 
         # ── Step 5: RISK ─────────────────────────────────────────
         _print("[5/9] Computing risk metrics...")
+        risk_summary = {}
         try:
             risk_summary = self.risk.generate_risk_summary(data)
             result["risk"] = risk_summary
@@ -384,6 +388,11 @@ class EconomicIntelligenceAgent:
             json.dump(data, f, indent=2, default=str)
         return filepath
 
+    def close(self):
+        """Close the data store connection"""
+        if self.store:
+            self.store.close()
+
     async def continuous_monitoring(self, interval_hours: int = 6, **kwargs):
         _print(f"\nStarting continuous monitoring (interval: {interval_hours}h)")
         _print("Press Ctrl+C to stop\n")
@@ -401,6 +410,7 @@ class EconomicIntelligenceAgent:
             except Exception as e:
                 _print(f"\nError in monitoring loop: {e}")
                 await asyncio.sleep(60)
+        self.close()
 
 
 # ── Banner + API Key Status ──────────────────────────────────────
@@ -564,6 +574,8 @@ Examples:
         import traceback
         traceback.print_exc()
         sys.exit(1)
+    finally:
+        agent.close()
 
 
 if __name__ == "__main__":

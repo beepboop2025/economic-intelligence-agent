@@ -42,8 +42,10 @@ class Alert:
         self.triggered_at = datetime.now()
 
     def _generate_dedup_key(self) -> str:
-        raw = f"{self.alert_type}:{self.message[:100]}"
-        return hashlib.md5(raw.encode()).hexdigest()
+        symbol = self.details.get("symbol", "") if self.details else ""
+        date = datetime.now().strftime("%Y-%m-%d")
+        raw = f"{self.alert_type}:{symbol}:{date}:{self.message}"
+        return hashlib.sha256(raw.encode()).hexdigest()
 
     def to_dict(self) -> Dict:
         return {
@@ -144,7 +146,7 @@ class AlertRuleEngine:
         if len(changes) > 5:
             mean = sum(changes) / len(changes)
             import math
-            std = math.sqrt(sum((x - mean) ** 2 for x in changes) / len(changes)) if changes else 1
+            std = math.sqrt(sum((x - mean) ** 2 for x in changes) / max(len(changes) - 1, 1)) if changes else 1
             threshold = self.thresholds.get("volatility_spike", 3.0)
 
             for c in crypto:

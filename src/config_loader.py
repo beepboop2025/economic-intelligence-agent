@@ -7,11 +7,16 @@ import yaml
 from pathlib import Path
 
 
-def load_env_file(env_path: str = ".env") -> dict:
+def _default_env_path() -> str:
+    """Resolve .env relative to the project root (parent of src/)"""
+    return str(Path(__file__).parent.parent / ".env")
+
+
+def load_env_file(env_path: str = None) -> dict:
     """Load environment variables from .env file"""
     env_vars = {}
-    env_file = Path(env_path)
-    
+    env_file = Path(env_path) if env_path else Path(_default_env_path())
+
     if not env_file.exists():
         return env_vars
     
@@ -29,7 +34,7 @@ def load_env_file(env_path: str = ".env") -> dict:
     return env_vars
 
 
-def setup_environment(env_path: str = ".env"):
+def setup_environment(env_path: str = None):
     """Load .env file and set environment variables"""
     env_vars = load_env_file(env_path)
     

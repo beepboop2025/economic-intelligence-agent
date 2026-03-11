@@ -1,0 +1,301 @@
+{
+  "timestamp": "2026-03-02T01:23:12.594585",
+  "demo_mode": true,
+  "crypto": {
+    "top_coins": [
+      "MarketData(asset_class='crypto', symbol='BTC', name='Bitcoin', price=85000.5, change_24h=1955.0114999999998, change_percent_24h=2.3, volume=33600000000.0, market_cap=1680000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594592), additional_data={'ath': 119000.7, 'ath_change_percent': -12.5, 'circulating_supply': 19764589.62006106})",
+      "MarketData(asset_class='crypto', symbol='ETH', name='Ethereum', price=2350.75, change_24h=42.313500000000005, change_percent_24h=1.8, volume=5640000000.0, market_cap=282000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594598), additional_data={'ath': 3291.0499999999997, 'ath_change_percent': -12.5, 'circulating_supply': 119961714.34648517})",
+      "MarketData(asset_class='crypto', symbol='BNB', name='BNB', price=625.3, change_24h=-3.1264999999999996, change_percent_24h=-0.5, volume=1840000000.0, market_cap=92000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594601), additional_data={'ath': 750.3599999999999, 'ath_change_percent': -12.5, 'circulating_supply': 147129377.89860868})",
+      "MarketData(asset_class='crypto', symbol='SOL', name='Solana', price=145.2, change_24h=7.5504, change_percent_24h=5.2, volume=1360000000.0, market_cap=68000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594602), additional_data={'ath': 203.27999999999997, 'ath_change_percent': -12.5, 'circulating_supply': 468319559.22865015})",
+      "MarketData(asset_class='crypto', symbol='XRP', name='XRP', price=2.85, change_24h=-0.0342, change_percent_24h=-1.2, volume=3300000000.0, market_cap=165000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594603), additional_data={'ath': 3.42, 'ath_change_percent': -12.5, 'circulating_supply': 57894736842.10526})",
+      "MarketData(asset_class='crypto', symbol='ADA', name='Cardano', price=0.95, change_24h=0.0076, change_percent_24h=0.8, volume=660000000.0, market_cap=33000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594604), additional_data={'ath': 1.3299999999999998, 'ath_change_percent': -12.5, 'circulating_supply': 34736842105.26316})",
+      "MarketData(asset_class='crypto', symbol='DOGE', name='Dogecoin', price=0.28, change_24h=0.035, change_percent_24h=12.5, volume=820000000.0, market_cap=41000000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594605), additional_data={'ath': 0.392, 'ath_change_percent': -12.5, 'circulating_supply': 146428571428.5714})",
+      "MarketData(asset_class='crypto', symbol='AVAX', name='Avalanche', price=26.4, change_24h=0.8184, change_percent_24h=3.1, volume=214000000.0, market_cap=10700000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594606), additional_data={'ath': 36.959999999999994, 'ath_change_percent': -12.5, 'circulating_supply': 405303030.3030303})",
+      "MarketData(asset_class='crypto', symbol='DOT', name='Polkadot', price=4.85, change_24h=-0.10185000000000001, change_percent_24h=-2.1, volume=150000000.0, market_cap=7500000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594606), additional_data={'ath': 5.819999999999999, 'ath_change_percent': -12.5, 'circulating_supply': 1546391752.5773196})",
+      "MarketData(asset_class='crypto', symbol='MATIC', name='Polygon', price=0.42, change_24h=0.0063, change_percent_24h=1.5, volume=84000000.0, market_cap=4200000000, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594607), additional_data={'ath': 0.588, 'ath_change_percent': -12.5, 'circulating_supply': 10000000000.0})"
+    ],
+    "global": {
+      "data": {
+        "active_cryptocurrencies": 10250,
+        "markets": 42000,
+        "total_market_cap": {
+          "usd": 2850000000000
+        },
+        "total_volume": {
+          "usd": 98000000000
+        },
+        "market_cap_percentage": {
+          "btc": 58.5,
+          "eth": 9.8,
+          "bnb": 3.2,
+          "sol": 2.4,
+          "xrp": 5.8
+        },
+        "market_cap_change_percentage_24h_usd": 2.1
+      }
+    },
+    "trending": {
+      "coins": [
+        {
+          "item": {
+            "name": "Dogecoin",
+            "symbol": "DOGE"
+          }
+        },
+        {
+          "item": {
+            "name": "Pepe",
+            "symbol": "PEPE"
+          }
+        },
+        {
+          "item": {
+            "name": "Bonk",
+            "symbol": "BONK"
+          }
+        }
+      ]
+    }
+  },
+  "equities": {
+    "indices": [
+      "MarketData(asset_class='equities', symbol='SPX', name='S&P 500', price=5850.25, change_24h=26.326125, change_percent_24h=0.45, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594611), additional_data={})",
+      "MarketData(asset_class='equities', symbol='DJI', name='Dow Jones', price=43850.75, change_24h=140.3224, change_percent_24h=0.32, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594612), additional_data={})",
+      "MarketData(asset_class='equities', symbol='IXIC', name='NASDAQ', price=18350.5, change_24h=143.1339, change_percent_24h=0.78, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594613), additional_data={})",
+      "MarketData(asset_class='equities', symbol='FTSE', name='FTSE 100', price=7680.25, change_24h=-11.520375, change_percent_24h=-0.15, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594614), additional_data={})",
+      "MarketData(asset_class='equities', symbol='DAX', name='DAX 40', price=17350.8, change_24h=107.57495999999999, change_percent_24h=0.62, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594615), additional_data={})",
+      "MarketData(asset_class='equities', symbol='N225', name='Nikkei 225', price=39250.3, change_24h=451.37845, change_percent_24h=1.15, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594615), additional_data={})",
+      "MarketData(asset_class='equities', symbol='HSI', name='Hang Seng', price=16850.45, change_24h=-143.228825, change_percent_24h=-0.85, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594616), additional_data={})"
+    ],
+    "sectors": []
+  },
+  "forex": {
+    "usd_rates": {
+      "base": "USD",
+      "date": "2026-03-02",
+      "rates": {
+        "EUR": 0.9235,
+        "JPY": 149.85,
+        "GBP": 0.785,
+        "AUD": 1.542,
+        "CAD": 1.358,
+        "CHF": 0.882,
+        "CNY": 7.185,
+        "INR": 86.75,
+        "BRL": 5.125,
+        "MXN": 17.35
+      }
+    },
+    "eur_rates": {
+      "base": "EUR",
+      "rates": {
+        "USD": 1.083
+      }
+    }
+  },
+  "bonds": {
+    "yields": [
+      "MarketData(asset_class='bonds', symbol='US3M', name='US 3-Month Treasury', price=5.25, change_24h=-0.01, change_percent_24h=-0.2, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594626), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US6M', name='US 6-Month Treasury', price=5.1, change_24h=-0.02, change_percent_24h=-0.4, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594627), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US1Y', name='US 1-Year Treasury', price=4.85, change_24h=0.02, change_percent_24h=0.4, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594628), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US2Y', name='US 2-Year Treasury', price=4.45, change_24h=0.05, change_percent_24h=1.0, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594628), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US5Y', name='US 5-Year Treasury', price=4.15, change_24h=0.04, change_percent_24h=0.8, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594629), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US7Y', name='US 7-Year Treasury', price=4.2, change_24h=0.05, change_percent_24h=1.0, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594630), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US10Y', name='US 10-Year Treasury', price=4.25, change_24h=0.08, change_percent_24h=1.6, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594630), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US20Y', name='US 20-Year Treasury', price=4.45, change_24h=0.06, change_percent_24h=1.2, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594631), additional_data={})",
+      "MarketData(asset_class='bonds', symbol='US30Y', name='US 30-Year Treasury', price=4.45, change_24h=0.06, change_percent_24h=1.2, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594631), additional_data={})"
+    ]
+  },
+  "commodities": {
+    "prices": [
+      "MarketData(asset_class='commodities', symbol='XAU', name='Gold', price=2850.5, change_24h=24.229249999999997, change_percent_24h=0.85, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594632), additional_data={})",
+      "MarketData(asset_class='commodities', symbol='XAG', name='Silver', price=32.25, change_24h=0.46762499999999996, change_percent_24h=1.45, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594633), additional_data={})",
+      "MarketData(asset_class='commodities', symbol='CL', name='WTI Crude Oil', price=78.5, change_24h=1.84475, change_percent_24h=2.35, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594634), additional_data={})",
+      "MarketData(asset_class='commodities', symbol='NG', name='Natural Gas', price=2.85, change_24h=-0.035625, change_percent_24h=-1.25, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594634), additional_data={})",
+      "MarketData(asset_class='commodities', symbol='HG', name='Copper', price=4.25, change_24h=0.027625, change_percent_24h=0.65, volume=None, market_cap=None, timestamp=datetime.datetime(2026, 3, 2, 1, 23, 12, 594635), additional_data={})"
+    ]
+  },
+  "economic_indicators": {
+    "GDP": {
+      "name": "Gross Domestic Product",
+      "value": 27.96,
+      "date": "2024-Q4"
+    },
+    "CPIAUCSL": {
+      "name": "Consumer Price Index",
+      "value": 314.2,
+      "date": "2024-12"
+    },
+    "UNRATE": {
+      "name": "Unemployment Rate",
+      "value": 3.7,
+      "date": "2024-12"
+    },
+    "FEDFUNDS": {
+      "name": "Federal Funds Rate",
+      "value": 5.33,
+      "date": "2024-12"
+    },
+    "M2SL": {
+      "name": "M2 Money Supply",
+      "value": 21050.2,
+      "date": "2024-11"
+    },
+    "PCEPI": {
+      "name": "PCE Price Index",
+      "value": 123.8,
+      "date": "2024-11"
+    }
+  },
+  "news": [
+    "NewsItem(title='Fed Chair Powell Signals Patience on Rate Cuts Amid Inflation Concerns', description='Federal Reserve Chairman Jerome Powell indicated the central bank will remain cautious about cutting interest rates, citing persistent inflation pressures and a strong labor market.', source='Reuters', published_at=datetime.datetime(2026, 3, 1, 23, 23, 12, 594637), url='https://example.com/news/1', sentiment=None, categories=['monetary_policy', 'inflation'])",
+    "NewsItem(title='Bitcoin ETF Inflows Reach Record $2.5B in February', description=\"Spot Bitcoin ETFs have seen unprecedented inflows, with BlackRock's IBIT leading the pack.\", source='CoinDesk', published_at=datetime.datetime(2026, 3, 1, 21, 23, 12, 594642), url='https://example.com/news/2', sentiment=None, categories=['crypto'])",
+    "NewsItem(title='ECB Hints at June Rate Cut as Eurozone Inflation Cools', description='European Central Bank officials have signaled growing confidence that inflation is returning to target.', source='Financial Times', published_at=datetime.datetime(2026, 3, 1, 19, 23, 12, 594644), url='https://example.com/news/3', sentiment=None, categories=['monetary_policy', 'inflation'])",
+    "NewsItem(title='Commercial Real Estate Concerns Mount as $1.5T Debt Looms', description='Analysts warn of potential stress in the commercial real estate sector.', source='Bloomberg', published_at=datetime.datetime(2026, 3, 1, 17, 23, 12, 594645), url='https://example.com/news/4', sentiment=None, categories=['debt', 'real_estate'])",
+    "NewsItem(title='NVIDIA Earnings Beat Expectations, AI Demand Remains Strong', description='NVIDIA reported quarterly earnings that exceeded Wall Street expectations.', source='CNBC', published_at=datetime.datetime(2026, 3, 1, 15, 23, 12, 594646), url='https://example.com/news/5', sentiment=None, categories=['equities', 'technology'])",
+    "NewsItem(title='Oil Prices Surge on Geopolitical Tensions in Middle East', description='Crude oil prices rose more than 3% as renewed tensions raised supply concerns.', source='Bloomberg', published_at=datetime.datetime(2026, 3, 1, 13, 23, 12, 594647), url='https://example.com/news/6', sentiment=None, categories=['commodities', 'geopolitics'])",
+    "NewsItem(title='Treasury Yields Climb as Investors Reassess Rate Cut Timeline', description='The 10-year Treasury yield rose to 4.25% as stronger-than-expected data pushed back cut expectations.', source='WSJ', published_at=datetime.datetime(2026, 3, 1, 11, 23, 12, 594648), url='https://example.com/news/7', sentiment=None, categories=['bonds', 'monetary_policy'])",
+    "NewsItem(title='China Announces New Stimulus Measures to Support Property Sector', description='Chinese authorities unveiled fresh measures to support the struggling real estate sector.', source='Reuters', published_at=datetime.datetime(2026, 3, 1, 9, 23, 12, 594649), url='https://example.com/news/8', sentiment=None, categories=['geopolitics', 'real_estate'])"
+  ],
+  "reddit": {
+    "wallstreetbets": [
+      {
+        "title": "NVDA to the moon! AI demand unstoppable \ud83d\ude80",
+        "score": 4500,
+        "num_comments": 890,
+        "upvote_ratio": 0.92
+      },
+      {
+        "title": "Rate cuts delayed again... market is overvalued",
+        "score": 2100,
+        "num_comments": 550,
+        "upvote_ratio": 0.78
+      },
+      {
+        "title": "CRE collapse incoming, short regional banks",
+        "score": 1800,
+        "num_comments": 430,
+        "upvote_ratio": 0.71
+      },
+      {
+        "title": "SPY calls printing, bears in shambles",
+        "score": 3200,
+        "num_comments": 670,
+        "upvote_ratio": 0.85
+      }
+    ],
+    "CryptoCurrency": [
+      {
+        "title": "BTC ETF inflows massive, institutions are loading",
+        "score": 5200,
+        "num_comments": 1200,
+        "upvote_ratio": 0.94
+      },
+      {
+        "title": "ETH looking weak, BTC dominance crushing alts",
+        "score": 1500,
+        "num_comments": 380,
+        "upvote_ratio": 0.65
+      },
+      {
+        "title": "Halving approaching - historical data says rally coming",
+        "score": 3800,
+        "num_comments": 920,
+        "upvote_ratio": 0.88
+      }
+    ],
+    "stocks": [
+      {
+        "title": "Magnificent 7 carrying the entire market",
+        "score": 2800,
+        "num_comments": 510,
+        "upvote_ratio": 0.8
+      },
+      {
+        "title": "Small caps finally getting a bid, rotation underway",
+        "score": 1200,
+        "num_comments": 290,
+        "upvote_ratio": 0.75
+      }
+    ],
+    "investing": [
+      {
+        "title": "60/40 portfolio working again as bond-equity correlation normalizes",
+        "score": 900,
+        "num_comments": 180,
+        "upvote_ratio": 0.82
+      },
+      {
+        "title": "Gold and BTC both up - inflation hedge thesis alive",
+        "score": 1100,
+        "num_comments": 220,
+        "upvote_ratio": 0.79
+      }
+    ]
+  },
+  "gdelt": [
+    {
+      "title": "Global Markets Rally on Rate Cut Hopes",
+      "source": "reuters.com",
+      "tone": 2.5,
+      "published_at": "2026-03-02T01:23:12.594651"
+    },
+    {
+      "title": "Oil Prices Surge Amid Middle East Tensions",
+      "source": "bloomberg.com",
+      "tone": -1.8,
+      "published_at": "2026-03-02T01:23:12.594652"
+    },
+    {
+      "title": "China Economy Shows Signs of Stabilization",
+      "source": "ft.com",
+      "tone": 1.2,
+      "published_at": "2026-03-02T01:23:12.594653"
+    },
+    {
+      "title": "European Banks Face CRE Exposure Concerns",
+      "source": "wsj.com",
+      "tone": -2.1,
+      "published_at": "2026-03-02T01:23:12.594654"
+    },
+    {
+      "title": "Tech Sector Earnings Beat Expectations",
+      "source": "cnbc.com",
+      "tone": 3.0,
+      "published_at": "2026-03-02T01:23:12.594654"
+    }
+  ],
+  "economic_events": [
+    {
+      "title": "US Non-Farm Payrolls",
+      "date": "2026-03-05",
+      "impact": "high",
+      "forecast": "185K",
+      "previous": "353K"
+    },
+    {
+      "title": "Fed Chair Powell Testimony",
+      "date": "2026-03-03",
+      "impact": "high"
+    },
+    {
+      "title": "ECB Interest Rate Decision",
+      "date": "2026-03-07",
+      "impact": "high",
+      "forecast": "4.00%",
+      "previous": "4.00%"
+    },
+    {
+      "title": "US CPI (YoY)",
+      "date": "2026-03-10",
+      "impact": "high",
+      "forecast": "3.1%",
+      "previous": "3.4%"
+    },
+    {
+      "event": "BOJ Rate Decision",
+      "date": "2026-03-14",
+      "impact": "high"
+    }
+  ]
+}

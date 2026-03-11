@@ -12,10 +12,13 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
 from functools import lru_cache
+import time
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+from resilience import RateLimiter
 
 
 @dataclass
@@ -71,15 +74,20 @@ class NewsItem:
 
 class BaseCollector:
     """Base class for data collectors"""
-    
+
+    # Shared rate limiter: 10 requests per 60 seconds (conservative default)
+    _rate_limiter = RateLimiter(max_tokens=10, refill_period=60, name="base_collector")
+    _last_request_time = 0.0
+    _min_request_interval = 1.0  # minimum seconds between requests
+
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key
         self.session = None
-        
+
     async def __aenter__(self):
         self.session = aiohttp.ClientSession()
         return self
-        
+
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         if self.session:
             try:
@@ -87,9 +95,16 @@ class BaseCollector:
             except Exception:
                 pass
         return False
-            
+
     async def fetch(self, url: str, params: Dict = None, headers: Dict = None) -> Dict:
-        """Async fetch with error handling"""
+        """Async fetch with error handling and rate limiting"""
+        # Simple sleep-based rate limit to avoid hammering APIs
+        now = time.monotonic()
+        elapsed = now - BaseCollector._last_request_time
+        if elapsed < BaseCollector._min_request_interval:
+            await asyncio.sleep(BaseCollector._min_request_interval - elapsed)
+        BaseCollector._last_request_time = time.monotonic()
+
         try:
             timeout = aiohttp.ClientTimeout(total=30)
             async with self.session.get(url, params=params, headers=headers, timeout=timeout) as resp:
@@ -125,18 +140,20 @@ class CryptoCollector(BaseCollector):
             "price_change_percentage": "24h"
         }
         data = await self.fetch(url, params)
-        
+
         coins = []
+        if not isinstance(data, list):
+            return coins
         for coin in data:
             coins.append(MarketData(
                 asset_class="crypto",
                 symbol=coin["symbol"].upper(),
                 name=coin["name"],
-                price=coin["current_price"],
-                change_24h=coin.get("price_change_24h", 0),
-                change_percent_24h=coin.get("price_change_percentage_24h", 0),
-                volume=coin.get("total_volume"),
-                market_cap=coin.get("market_cap"),
+                price=coin.get("current_price") or 0,
+                change_24h=coin.get("price_change_24h") or 0,
+                change_percent_24h=coin.get("price_change_percentage_24h") or 0,
+                volume=coin.get("total_volume") or 0,
+                market_cap=coin.get("market_cap") or 0,
                 additional_data={
                     "ath": coin.get("ath"),
                     "ath_change_percent": coin.get("ath_change_percentage"),
