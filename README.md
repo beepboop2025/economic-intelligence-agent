@@ -1,3 +1,8 @@
+<!-- textura-banner -->
+<div align="center">
+  <a href="https://github.com/beepboop2025/economic-intelligence-agent"><img src="./banner.svg" width="100%" alt="economic-intelligence-agent" /></a>
+</div>
+
 # Economic Intelligence Agent
 
 **Automated economic data collection, quantitative analysis, and risk assessment -- delivered as actionable intelligence reports.**
