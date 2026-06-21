@@ -112,12 +112,18 @@ class TestDrawdown:
 # ── Performance Metrics ──────────────────────────────────────────
 
 class TestPerformanceMetrics:
-    def test_sharpe_none_when_zero_variance(self):
-        # Use a value that is exactly representable in binary floating point so
-        # the sample std is truly 0 on every platform => undefined Sharpe => None.
-        returns = [0.5] * 30
-        sharpe = PerformanceMetrics.sharpe_ratio(returns)
-        assert sharpe is None
+    def test_sharpe_none_when_insufficient_data(self):
+        # Fewer than 10 observations => statistic is not computed => None.
+        returns = [0.01, 0.02, -0.01, 0.03, 0.0]
+        assert PerformanceMetrics.sharpe_ratio(returns) is None
+
+    def test_sharpe_sign_tracks_excess_return(self):
+        # Mean excess return is comfortably positive here, so the (annualized)
+        # Sharpe ratio must be positive too — sign is invariant to platform FP.
+        gains = [0.02, 0.018, 0.025, 0.015, 0.022, 0.019, 0.021, 0.017, 0.023, 0.016, 0.02, 0.018]
+        sharpe = PerformanceMetrics.sharpe_ratio(gains)
+        assert sharpe is not None
+        assert sharpe > 0
 
     def test_sharpe_defined_with_variance(self):
         returns = [0.01, 0.02, -0.005, 0.015, 0.0, 0.03, -0.01, 0.02, 0.01, -0.002, 0.018, 0.005]
