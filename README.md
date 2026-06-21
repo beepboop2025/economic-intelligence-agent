@@ -1,3 +1,6 @@
+![tests](https://github.com/beepboop2025/economic-intelligence-agent/actions/workflows/tests.yml/badge.svg)
+![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+
 <!-- textura-banner -->
 <div align="center">
   <a href="https://github.com/beepboop2025/economic-intelligence-agent"><img src="./banner.svg" width="100%" alt="economic-intelligence-agent" /></a>

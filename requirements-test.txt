@@ -1,0 +1,6 @@
+# Minimal dependencies for the core unit-test suite.
+# The tested modules (utils, quant_engine, risk_engine, sentiment_engine,
+# alert_engine) all ship pure-Python fallbacks, so no numpy/vaderSentiment/
+# aiohttp is required to run these deterministic, offline tests.
+pytest>=7.0.0
+pytest-cov>=4.0.0
