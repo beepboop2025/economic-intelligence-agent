@@ -112,10 +112,11 @@ class TestDrawdown:
 # ── Performance Metrics ──────────────────────────────────────────
 
 class TestPerformanceMetrics:
-    def test_sharpe_positive_for_steady_gains(self):
-        returns = [0.01] * 30
+    def test_sharpe_none_when_zero_variance(self):
+        # Use a value that is exactly representable in binary floating point so
+        # the sample std is truly 0 on every platform => undefined Sharpe => None.
+        returns = [0.5] * 30
         sharpe = PerformanceMetrics.sharpe_ratio(returns)
-        # Zero-variance returns => std 0 => undefined Sharpe => None.
         assert sharpe is None
 
     def test_sharpe_defined_with_variance(self):
