@@ -8,7 +8,7 @@
 **Automated economic data collection, quantitative analysis, and risk assessment -- delivered as actionable intelligence reports.**
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![License: Source-Available](https://img.shields.io/badge/License-Source--Available-orange.svg)
 ![Data Sources](https://img.shields.io/badge/Data_Sources-9-orange.svg)
 
 ---
@@ -152,7 +152,7 @@ Report Generator (Markdown / HTML / JSON)
 
 ## License
 
-This project is licensed under the MIT License.
+Source-available — free to view, study, and run locally for non-commercial use. Commercial use requires a separate license. See [LICENSE.md](LICENSE.md) for the full terms.
 
 ---
 
