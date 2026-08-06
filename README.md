@@ -5,7 +5,7 @@
 
 # Economic Intelligence Agent
 
-**Automated economic data collection, quantitative analysis, and risk assessment -- delivered as actionable intelligence reports.**
+Collect economic and market data, calculate risk and regime indicators, trigger alerts, and generate Markdown, HTML, or JSON reports.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![License: Source-Available](https://img.shields.io/badge/License-Source--Available-orange.svg)
@@ -75,7 +75,7 @@ python setup_keys.py
 | `OPENAI_API_KEY` | Alternative LLM provider | No |
 | `ANTHROPIC_API_KEY` | Alternative LLM provider | No |
 
-All data sources function in demo mode without API keys. Keys are optional and enhance data quality and coverage.
+The included demo mode runs without API keys. Live-source coverage depends on the keys configured for each provider.
 
 Additional settings (LLM model, alert thresholds, retention period) are managed in `config/settings.yaml`.
 
