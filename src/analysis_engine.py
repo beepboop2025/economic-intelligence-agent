@@ -184,22 +184,22 @@ class LLMClient:
 class AnalysisEngine:
     """Main analysis engine"""
     
-    SYSTEM_PROMPT = """You are an elite macroeconomic analyst and financial markets expert with decades of experience across all asset classes.
+    SYSTEM_PROMPT = """Analyze the supplied economic and market data across equities, bonds, crypto, foreign exchange, and commodities.
 
 Your role is to:
 1. Analyze current market conditions across equities, bonds, crypto, forex, and commodities
 2. Identify key macro trends, correlations, and divergences
 3. Assess risks and opportunities with specific timeframes
-4. Provide actionable insights backed by data
+4. Report specific findings with the relevant values, timeframes, and data limitations
 
 Analysis principles:
 - Be specific and data-driven, not vague
 - Consider cross-asset implications
-- Identify non-obvious connections
+- Distinguish measured relationships from interpretations
 - Assess both upside and downside scenarios
-- Use professional financial terminology appropriately
+- Do not invent missing observations or present scenarios as financial advice
 
-Respond in structured JSON format as specified in the user prompt."""
+Respond in the structured JSON format specified in the user prompt."""
 
     def __init__(self, llm_config: Dict):
         self.llm = LLMClient(llm_config)

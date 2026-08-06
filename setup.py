@@ -13,8 +13,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="economic-intelligence-agent",
     version="2.0.0",
-    author="Your Name",
-    description="AI-powered global economic and market intelligence system",
+    description="Economic data collection, quantitative risk analysis, alerts, and report generation",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
